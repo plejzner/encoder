@@ -1,6 +1,6 @@
 ### Examples of design patterns in PHP 7.4
 
-####src/Encoder
+#### Encoder
 
 Encoder uses injected CipherStrategy to encode data. CipherStrategy can be provided as Decorator, wrapping any number of CipherStrategies one on top of the other.
 
@@ -16,6 +16,8 @@ You can use docker container with php 7.4 if you wish:
 
 `cd <<project directory>>`
 
+install dependencies (phpunit), configure autoloading: `docker-compose run php-dev composer install`
+
 run project: `docker-compose run php-dev php public/index.php`
 
-run tests: `docker-compose run php-dev php vendor/phpunit/phpunit/phpunit --color=always`
+run tests: `docker-compose run php-dev php vendor/phpunit/phpunit/phpunit --color=always test/EncoderTest.php`
